@@ -16,7 +16,7 @@ Key Features Include:
 Sections
 
 Matrix Animation
-- A vertical flow of binary digits (`0` and `1`) rendered column by column this gives a hacker-style digital visual impression on load
+- A vertical flow of binary digits (`0` and `1`) column by column this gives a hacker-style digital visual impression on site load.
 
 Home Section
 - Split view introducing roles in Ethical Hacking and Web Development
@@ -33,10 +33,11 @@ Contact Section
   - [GitHub](https://github.com/nanzz-leo/)
   - [Email](mailto:am.sc.u4cse24134@am.students.amrita.edu)
 - Resume available for direct download as PDF
+  
 
 
 To view the project locally:
 
-1. Click Link : 
+1. Click Link : https://nanzz-leo.github.io/project-portfolio/ 
    
 
