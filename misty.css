@@ -262,17 +262,6 @@ h4 {
 
 <!--Responsive-->
 @media (max-width: 768px) {
-
-  .left, .right {
-    width: 100%;
-    flex-direction: column;
-    background-size: cover;
-  }
-
-  .section {
-    flex-direction: column;
-    padding: 40px 20px;
-  }
   
   .hero-name {
     font-size: 2.5rem;
