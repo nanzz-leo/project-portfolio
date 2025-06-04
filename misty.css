@@ -1,67 +1,109 @@
+<!--Importing font-->
 @import url(https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple);
 
-/* For Full Page Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.join {
-  position: absolute;
-  color:rgb(201, 182, 12);
-  width: 100%;
-  height: calc(100vh - 80px);
-  opacity: 0;
-  z-index: -1;
-  animation: fadeIn 3s ease-in-out 1s forwards; 
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
 }
 
-.split {
-  position: absolute;
-  top: 80px; 
-  width: 50%;
-  height: calc(100vh - 80px); 
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out 1s forwards; 
-}
-.section{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 120px 40px 80px;
-  min-height: 100vh;
-  gap: 20px;
-
-}
-.scroll {
-  height: 200vh;
-  background-size:auto;
-
-}
-
-.left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+<!--Matrix Background-->
+.matrix {
+  position: fixed;
+  top: 0;
   left: 0;
-  background: url('https://4kwallpapers.com/images/wallpapers/anonymous-hacker-data-breach-5k-3840x2160-7.jpg') no-repeat center center/cover; /* Hacker pic */
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  color: greenyellow;
+  font-size: 20px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+  animation: fadeOut 2s ease-in-out 0.1s forwards;
 }
 
-.right {
-  flex: 1;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  right: 0;
-  background:url('https://t4.ftcdn.net/jpg/02/66/07/83/360_F_266078398_vXlKFR2KDOj8bpsly1lduNbvaDrZGMY2.jpg');
+.column {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fall 1.5s linear infinite;
 }
-.images{
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine;
+
+.column span {
+  display: block;
+  opacity: 0.8;
 }
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 30px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.416), green, rgba(0, 0, 0, 0.548));
+  color: white;
+  text-align: center;
+}
+
+nav a {
+  font-family: 'Rancho';
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 35px;
+  animation: slideTop 0.5s ease forwards;
+  position: relative;
+  z-index: 10;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
 .hero-name {
   font-size: 5rem;
   position: absolute;
@@ -71,72 +113,6 @@
   z-index: 10;
 }
 
-
-.project {
-  background-color: #00ffee;
-  display:block;
-  margin: 20px;
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.5rem;
-    position: static;
-    text-align: center;
-    margin-top: 1rem;
-  }
-}
-.split-container {
-  display: flex;
-  flex-direction: row;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-.center {
-  justify-content: center;
-  text-align: center;
-}
-.contact {
-  flex-direction: column;
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-h3 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: rgb(43, 229, 18);
-  text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
-  animation: glow 1.5s infinite alternate;
-  transition: all 0.5s ease-in-out;
-}
-h4{
-  font-size: 1.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
-  transition: all 0.5s ease-in-out;
-}
-
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18);
-  }
-  to {
-    text-shadow: 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
-  }
-}
 
 .text-overlay {
   position: absolute;
@@ -149,6 +125,70 @@ h4{
   z-index: 10;
   font-weight: bold;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+.split {
+  position: absolute;
+  top: 80px;
+  width: 50%;
+  height: calc(100vh - 80px);
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out 1s forwards;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 120px 40px 80px;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.scroll {
+  height: 200vh;
+  background-size: auto;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  background: url('https://4kwallpapers.com/images/wallpapers/anonymous-hacker-data-breach-5k-3840x2160-7.jpg') no-repeat center center/cover;
+}
+
+.right {
+  background: url('https://t4.ftcdn.net/jpg/02/66/07/83/360_F_266078398_vXlKFR2KDOj8bpsly1lduNbvaDrZGMY2.jpg');
+}
+
+.images {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+}
+
+.project {
+  background-color: #00ffee;
+  display: block;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-me {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 5px lime;
 }
 
 .socials {
@@ -166,74 +206,69 @@ h4{
 }
 
 .social-icons img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  filter: brightness(80%);
   transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
   transform: scale(1.2);
 }
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: black;
+
+
+h3 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(43, 229, 18);
+  text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
+  animation: glow 1.5s infinite alternate;
+  transition: all 0.5s ease-in-out;
 }
 
-.matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-family: monospace;
-  color: greenyellow;
-  font-size: 20px;
-  line-height: 1.5;
-  display: flex;
-  justify-content:space-around;  
-  pointer-events: none;
-  animation: fadeOut 2s ease-in-out .1s forwards;
+h4 {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+  transition: all 0.5s ease-in-out;
 }
 
-.column {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: fall 1.5s linear infinite ;
-}
-
-.column span {
-  display: block;
-  opacity: 0.8;
-}
-@keyframes fadeOut {
+@keyframes fadeIn {
   to {
-    opacity: 0;
-    visibility: hidden; /* This removes it completely */
+    opacity: 1;
   }
 }
 
-@keyframes fall {
+@keyframes glow {
   from {
-    transform: translateY(-100%);
+    text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18);
   }
   to {
-    transform: translateY(100%);
+    text-shadow: 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
   }
 }
 
-
-
-
-
-@media (max-width: 768px) {
-  .split-container {
-    flex-direction: column;
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-/* Responsive */
+
+<!--Responsive-->
 @media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.5rem;
+    position: static;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -252,142 +287,4 @@ body {
   header h1 {
     font-size: 1.5rem;
   }
-
-  .amp {
-    font-size: 1rem;
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-@keyframes slideTop {
-  0% {
-      opacity: 0;
-      transform: translateY(100px);
-  }
-
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }    
-}
-
- 
-  
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    padding: 20px 10%;
-    background-color: rgba(4, 93, 11, 0.492);
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.416), green, rgba(0, 0, 0, 0.548));
-    color: rgb(255, 255, 255);
-    padding: 30px;
-    align-items: center;
-    text-align: center;
-}
-
-div{
-    color: green;
-}
-
-  
-  nav a {
-    font-family:  'Rancho';
-    color: white;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    font-size: 30px;
-    font-weight: 400;
-    margin-left: 35px;
-    animation: slideTop .5s ease forwards;
-    z-index: 10;
-  }
-  a:any-link {
-    cursor: pointer;
-  }
-  nav a:hover {
-    color: black;
-  }
-  
-  nav a:hover::after {
-    width: 100%;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0; 
-    width: 0;
-    height: 2px; 
-    background-color: black;
-    transition: width 0.3s ease-in-out;
-  }
-
-
-
-/* Main container */
-.container {
-  display: grid;
-  margin-top: 50px;
-  align-items: start;
-}
-
-.left-box, .right-box {
-  padding: 20px;
-  border: 2px solid lime;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 15px lime;
-  border-radius: 15px;
-  margin: 20px 50px; /* This will push both boxes inward */
-}
-
-
-
-
-
-.social-icons img {
-  width: 50px;
-  height: 50px;
-  filter: brightness(80%);
-}
-
-
-  .about-me {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    text-shadow: 0 0 5px lime;
-  }
-  
-  .social-icons1 {
-    margin-top: 15px;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .social-icons1 img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .social-icons img:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
-  }
-  
-  
-
-
-  
