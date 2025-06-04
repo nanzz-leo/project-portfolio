@@ -129,7 +129,7 @@ nav a:hover::after {
 
 
 .split {
-  position: static;
+  position: absolute;
   top: 80px;
   width: 50%;
   height: calc(100vh - 80px);
@@ -262,10 +262,6 @@ h4 {
 
 <!--Responsive-->
 @media (max-width: 768px) {
-
-  .matrix{
-    display:none;
-  }
 
   .left, .right {
     width: 100%;
