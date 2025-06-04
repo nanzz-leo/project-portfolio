@@ -129,7 +129,7 @@ nav a:hover::after {
 
 
 .split {
-  position: absolute;
+  position: static;
   top: 80px;
   width: 50%;
   height: calc(100vh - 80px);
@@ -262,6 +262,22 @@ h4 {
 
 <!--Responsive-->
 @media (max-width: 768px) {
+
+  .matrix{
+    display:none;
+  }
+
+  .left, .right {
+    width: 100%;
+    flex-direction: column;
+    background-size: cover;
+  }
+
+  .section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
   .hero-name {
     font-size: 2.5rem;
     position: static;
