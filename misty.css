@@ -1,178 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple);
 
-/* For Full Page Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.join {
-  position: absolute;
-  color:rgb(201, 182, 12);
-  width: 100%;
-  height: calc(100vh - 80px);
-  opacity: 0;
-  z-index: -1;
-  animation: fadeIn 3s ease-in-out 1s forwards; 
-}
-
-.split {
-  position: absolute;
-  top: 80px; 
-  width: 50%;
-  height: calc(100vh - 80px); 
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out 1s forwards; 
-}
-.section{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 120px 40px 80px;
-  min-height: 100vh;
-  gap: 20px;
-
-}
-.scroll {
-  height: 200vh;
-  background-size:auto;
-
-}
-
-.left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  background: url('https://4kwallpapers.com/images/wallpapers/anonymous-hacker-data-breach-5k-3840x2160-7.jpg') no-repeat center center/cover; /* Hacker pic */
-}
-
-.right {
-  flex: 1;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  right: 0;
-  background:url('https://t4.ftcdn.net/jpg/02/66/07/83/360_F_266078398_vXlKFR2KDOj8bpsly1lduNbvaDrZGMY2.jpg');
-}
-.images{
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine;
-}
-.hero-name {
-  font-size: 5rem;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-
-.project {
-  background-color: #00ffee;
-  display:block;
-  margin: 20px;
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.5rem;
-    position: static;
-    text-align: center;
-    margin-top: 1rem;
-  }
-}
-.split-container {
-  display: flex;
-  flex-direction: row;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-.center {
-  justify-content: center;
-  text-align: center;
-}
-.contact {
-  flex-direction: column;
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-h3 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: rgb(43, 229, 18);
-  text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
-  animation: glow 1.5s infinite alternate;
-  transition: all 0.5s ease-in-out;
-}
-h4{
-  font-size: 1.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
-  transition: all 0.5s ease-in-out;
-}
-
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18);
-  }
-  to {
-    text-shadow: 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
-  }
-}
-
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-size: 3rem;
-  z-index: 10;
-  font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-}
-
-.socials {
-  background-color: #111;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.social-icons {
-  display: block;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 20px;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
 }
 body {
   margin: 0;
@@ -207,10 +39,11 @@ body {
   display: block;
   opacity: 0.8;
 }
+
 @keyframes fadeOut {
   to {
     opacity: 0;
-    visibility: hidden; /* This removes it completely */
+    visibility: hidden;
   }
 }
 
@@ -223,65 +56,6 @@ body {
   }
 }
 
-
-
-
-
-@media (max-width: 768px) {
-  .split-container {
-    flex-direction: column;
-  }
-}
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .projects {
-    flex-direction: column;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .amp {
-    font-size: 1rem;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-@keyframes slideTop {
-  0% {
-      opacity: 0;
-      transform: translateY(100px);
-  }
-
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }    
-}
-
- 
-  
 header {
     position: fixed;
     top: 0;
@@ -297,12 +71,7 @@ header {
     text-align: center;
 }
 
-div{
-    color: green;
-}
-
-  
-  nav a {
+nav a {
     font-family:  'Rancho';
     color: white;
     text-decoration: none;
@@ -335,54 +104,190 @@ div{
     transition: width 0.3s ease-in-out;
   }
 
-
-
-/* Main container */
-.container {
-  display: grid;
-  margin-top: 50px;
-  align-items: start;
+  .hero-name {
+  font-size: 5rem;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
-.left-box, .right-box {
-  padding: 20px;
-  border: 2px solid lime;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 15px lime;
-  border-radius: 15px;
-  margin: 20px 50px; /* This will push both boxes inward */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  z-index: 10;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.split {
+  position: absolute;
+  top: 80px; 
+  width: 50%;
+  height: calc(100vh - 80px); 
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out 1s forwards; 
+}
+
+.section{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 120px 40px 80px;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.scroll {
+  height: 200vh;
+  background-size:auto;
+
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  background: url('https://4kwallpapers.com/images/wallpapers/anonymous-hacker-data-breach-5k-3840x2160-7.jpg') no-repeat center center/cover; /* Hacker pic */
+}
+
+.right {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  right: 0;
+  background:url('https://t4.ftcdn.net/jpg/02/66/07/83/360_F_266078398_vXlKFR2KDOj8bpsly1lduNbvaDrZGMY2.jpg');
+}
+.images{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
 }
 
 
 
-
-
-.social-icons img {
-  width: 50px;
-  height: 50px;
-  filter: brightness(80%);
+.project {
+  background-color: #00ffee;
+  display:block;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-
-  .about-me {
+.about-me {
     margin-top: 20px;
     font-size: 1.2rem;
     color: #fff;
     text-shadow: 0 0 5px lime;
   }
-  
-  .social-icons1 {
-    margin-top: 15px;
-    display: flex;
-    gap: 15px;
+
+.socials {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.social-icons {
+  display: block;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  filter: brightness(80%);
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+div{
+    color: green;
+}
+
+h3 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(43, 229, 18);
+  text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
+  animation: glow 1.5s infinite alternate;
+  transition: all 0.5s ease-in-out;
+}
+h4{
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
-  .social-icons1 img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(43, 229, 18), 0 0 20px rgb(43, 229, 18);
   }
-  
-  .social-icons img:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
+  to {
+    text-shadow: 0 0 20px rgb(43, 229, 18), 0 0 40px rgb(43, 229, 18);
   }
+}
+@keyframes slideTop {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }    
+}
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.5rem;
+    position: static;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .projects {
+    flex-direction: column;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .split-container {
+    flex-direction: column;
+  }
+}
